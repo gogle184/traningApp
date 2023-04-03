@@ -18,7 +18,7 @@ services:
       - ./api:/traningApp
       - gem_data:/usr/local/bundle
     ports:
-      - "3000:3000"
+      - "3001:3000"
     depends_on:
       - db
     stdin_open: true
