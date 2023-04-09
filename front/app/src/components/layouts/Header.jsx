@@ -101,7 +101,7 @@ const Header = () => {
             variant = "h6"
             className = {classes.title}
             >
-              sample
+              研修作成メーカー
           </Typography>
           <AuthButtons />
         </Toolbar>

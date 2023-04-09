@@ -38,9 +38,14 @@ module TraningApp
     config.api_only = true
 
         # ここからコピペする
-        config.session_store :cookie_store, key: '_interslice_session'
+        config.session_store :active_record_store, key: '_session_id'
         config.middleware.use ActionDispatch::Cookies # Required for all session management
-        config.middleware.use ActionDispatch::Session::CookieStore, config.session_options
+        config.middleware.use ActionDispatch::Session::ActiveRecordStore, {
+          key: '_session_id',
+          serializer: JSON,
+          cookie_only: true,
+          expire_after: 1.day
+        }
         config.middleware.use ActionDispatch::Flash
         config.middleware.insert_before 0, Rack::Cors do
           allow do

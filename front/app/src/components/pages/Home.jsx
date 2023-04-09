@@ -12,6 +12,7 @@ const  Home = () => {
           <>
             <h2>メールアドレス： {currentUser.email}</h2>
             <h2>名前: {currentUser.name}</h2>
+            <h2>AdminId: {currentUser.adminId}</h2>
           </>
         ) : (
           <></>
